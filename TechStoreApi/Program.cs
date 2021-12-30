@@ -1,7 +1,20 @@
 ﻿using TechStoreApi.Models;
 using TechStoreApi.Services;
 
+var MyPolicy = "_myPolicy";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyPolicy,
+                builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+});
 
 // Add services to the container.
 builder.Services.Configure<TechStoreDatabaseSettings>(
@@ -24,6 +37,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyPolicy);
 
 app.UseAuthorization();
 

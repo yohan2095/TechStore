@@ -2,11 +2,13 @@
 using TechStoreApi.Models;
 using TechStoreApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Web.Http.Cors;
 
 namespace TechStoreApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[EnableCors(origins: "*", methods: "*", headers:"*")]
 public class ProductsController : ControllerBase
 {
 	private readonly ProductsService _productsService;
