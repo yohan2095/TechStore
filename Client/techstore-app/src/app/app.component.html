@@ -1,0 +1,14 @@
+<!--Logo of the company-->
+<h1>TechStore</h1>
+
+<!--Navbar including routes for Products and Cart components:
+routerLink defines the route's link from the app-routing-module.ts
+routerLinkActive tracks wheter the linked route of an element is
+currently active-->
+<nav>
+  <a routerLink="/products" routerLinkActive="active">Products</a>
+  <a routerLink="/cart" routerLinkActive="active">My Cart</a>
+</nav>
+
+<!--The routed views render in the router-outlet-->
+<router-outlet></router-outlet>
