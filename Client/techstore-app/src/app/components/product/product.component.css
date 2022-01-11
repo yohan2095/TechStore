@@ -1,0 +1,23 @@
+.product_container {
+    margin: 1%;
+    padding: 1%;
+    border: solid 3px black;
+    border-radius: 3%;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    background-color: #e8e8e8;
+    text-align: center;
+}
+
+.product_imgContainer {
+    text-align: center;
+    width: 98%;
+    height: 40%;
+    border: solid 2px black;
+    background-color: white;
+}
+
+.product_imgContainer > img {
+    height: 90%;
+}

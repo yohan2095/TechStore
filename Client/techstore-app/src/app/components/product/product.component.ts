@@ -8,13 +8,13 @@ import { Product } from 'src/app/classes/product';
 })
 export class ProductComponent implements OnInit {
 
+  //Takes data from the parent component <app-products> and stores it into productData
   @Input()
   productData : Product = new Product()
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.productData)
   }
 
 }

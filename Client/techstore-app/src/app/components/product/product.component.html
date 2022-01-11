@@ -1,1 +1,11 @@
-Hello from productComp
+<div class="product_container">
+    {{ productData.productName }} <br/>
+
+    <div class="product_imgContainer">
+        <img src="{{ productData.imgUrl }}" alt="{{ productData.productName }}">
+    </div>
+
+    By: {{ productData.firm }} <br/>
+    Category: {{ productData.category }} <br/>
+    Price: {{ productData.price }}.00$
+</div>

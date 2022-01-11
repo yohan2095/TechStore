@@ -16,7 +16,7 @@ export class ProductsService {
 
   //Get all products. (Sends an http request to the server an get All the products)
   getProducts() {
-    return this.http.get<Product[]>("https://localhost:7256/api/Products")
+    return this.http.get<Product[]>("https://localhost:7256/api/products")
   }
 
   //Get product by id. (Sends an http request to the server and get a products by its id)
