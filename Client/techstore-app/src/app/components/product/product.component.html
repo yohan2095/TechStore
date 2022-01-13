@@ -2,10 +2,19 @@
     {{ productData.productName }} <br/>
 
     <div class="product_imgContainer">
-        <img src="{{ productData.imgUrl }}" alt="{{ productData.productName }}">
+        <img src="{{ productData.imgUrl }}" 
+             alt="{{ productData.productName }}"
+        >
+    </div><br/>
+
+    <div class="product_details">
+        <span class="product_firm">By: {{ productData.firm }}</span><br/>
+        <span class="product_category">Category: {{ productData.category }}</span><br/>
+        <span class="product_price">Price: {{ productData.price }}.00$</span>
     </div>
 
-    By: {{ productData.firm }} <br/>
-    Category: {{ productData.category }} <br/>
-    Price: {{ productData.price }}.00$
+    <button [style.background]="isAdded? 'orange' : 'none'" 
+            (click)="addToCart()">
+        <mat-icon>add_shopping_cart</mat-icon>
+    </button>
 </div>

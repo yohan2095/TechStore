@@ -1,3 +1,10 @@
 <!--*ngFor for each product in products, display an <app-product> component with its data.
     while the variable product get stored in the productData variable which is in the <app-product> component.-->
-<app-product [productData]="product" *ngFor="let product of products"></app-product>
+<app-product [productData]="product"
+             *ngFor="let product of products"
+             (itemToCart)="addItemToCart($event)"
+></app-product>
+
+<ul>
+    <li *ngFor="let cart of myCart">{{ myCart }}</li>
+</ul>

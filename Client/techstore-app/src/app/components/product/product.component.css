@@ -4,8 +4,8 @@
     border: solid 3px black;
     border-radius: 3%;
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 230px;
     background-color: #e8e8e8;
     text-align: center;
 }
@@ -20,4 +20,21 @@
 
 .product_imgContainer > img {
     height: 90%;
+}
+
+.product_details {
+    text-align: left;
+}
+
+.addToCart {
+    float: right;
+    margin: 1%;
+}
+
+button {
+    float: right;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
