@@ -1,0 +1,30 @@
+.cart_itemContainer {
+    margin: 1%;
+    padding: 1%;
+    border: solid 3px black;
+    border-radius: 3%;
+    display: inline-block;
+    width: 200px;
+    height: 70px;
+    background-color: #e8e8e8;
+    text-align: center;
+}
+
+.cart_itemPrice {
+    color: green;
+    float: left;
+}
+
+.cart_itemRemoveBtn {
+    background-color: crimson;
+    color: white;
+    float: right;
+}
+.cart_itemRemoveBtn:hover {
+    transform: scale(1.1);
+}
+
+* {
+    text-align: center;
+}
+

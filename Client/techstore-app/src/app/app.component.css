@@ -18,3 +18,7 @@ nav a.active {
     color: white;
     background-color: black;
 }
+
+* {
+    text-align: center;
+}

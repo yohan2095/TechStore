@@ -16,9 +16,6 @@ export class ProductsComponent implements OnInit {
   //Initiate an array of Product class as products
   products : Product[] = []
 
-  //Initiate an array of string where will be stored all the product id's added to cart
-  myCart : Array<string> = []
-
   //Initiate inside the Constructor ProductsService as srv only in this comp
   constructor(
     private srv : ProductsService
@@ -31,11 +28,6 @@ export class ProductsComponent implements OnInit {
     The data is stored inside the sub and is sent to products.
     */
     this.sub = this.srv.getProducts().subscribe( (data : Product[]) => this.products = data )
-  }
-
-  //receives a string (product id) from the <app-product> component and adds it to myCart Array.
-  addItemToCart(itemId : string) {
-    this.myCart.push(itemId)
   }
 
   ngOnDestroy() {

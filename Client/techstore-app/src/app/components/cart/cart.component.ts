@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/classes/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  //sets all items into the cart array of objects.
+  items = this.crtsrv.getItems()
+
+  constructor(
+    private crtsrv: CartService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  //Resets the whole cart
+  removeAllItems() {
+    this.crtsrv.clearCart()
+    this.items = this.crtsrv.getItems()
   }
 
 }

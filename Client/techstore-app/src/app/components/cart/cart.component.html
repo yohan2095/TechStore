@@ -1,1 +1,20 @@
-<p>cart works!</p>
+<h1>My products</h1>
+
+<div class="cart_items">
+    <div *ngFor="let item of items"
+         class="cart_itemContainer">
+       <span>{{ item.productName }}</span><br/><br/>
+       
+       <span class="cart_itemPrice">
+        {{ item.price }}.00$
+       </span>
+
+       <button class="cart_itemRemoveBtn"
+               (click)="removeAllItems()">
+        <mat-icon>remove_shopping_cart</mat-icon>
+       </button>
+    </div>
+</div>
+
+<h2>Total to pay:</h2>
+

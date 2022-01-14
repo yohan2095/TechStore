@@ -38,3 +38,13 @@ button {
 button:hover {
     transform: scale(1.1);
 }
+
+.product_added {
+    float: right;
+    color: green;
+    margin: 1%;
+}
+
+* {
+    text-align: center;
+}

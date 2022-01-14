@@ -13,8 +13,14 @@
         <span class="product_price">Price: {{ productData.price }}.00$</span>
     </div>
 
-    <button [style.background]="isAdded? 'orange' : 'none'" 
+    <!--If isAdded is false, the button will be displayed-->
+    <button *ngIf="!isAdded" 
             (click)="addToCart()">
         <mat-icon>add_shopping_cart</mat-icon>
     </button>
+
+    <!--Else is isAdded is true, this icon will be displayed instead of the button-->
+    <span class="product_added">
+        <mat-icon *ngIf="isAdded">check_circle</mat-icon>
+    </span>
 </div>
