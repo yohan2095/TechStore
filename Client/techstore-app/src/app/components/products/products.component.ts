@@ -16,6 +16,9 @@ export class ProductsComponent implements OnInit {
   //Initiate an array of Product class as products
   products : Product[] = []
 
+  //User's input to find a product, the input goes there.
+  findProduct : string = "";
+
   //Initiate inside the Constructor ProductsService as srv only in this comp
   constructor(
     private srv : ProductsService
@@ -28,6 +31,25 @@ export class ProductsComponent implements OnInit {
     The data is stored inside the sub and is sent to products.
     */
     this.sub = this.srv.getProducts().subscribe( (data : Product[]) => this.products = data )
+
+    console.table(this.products)
+  }
+
+  /* This function takes a product, verifies if the findProduct input match with the name, category or firm
+  an returns a boolean relatively. This boolean goes to an *ngIf directive to decide wheter to display the product
+  or not according to the search input. */
+  search(product : Product):boolean {
+    let name = product.productName?.toLowerCase();
+    let category = product.category?.toLowerCase();
+    let firm = product.firm?.toLowerCase();
+
+    if(name?.includes(this.findProduct.toLowerCase()) ||
+       category?.includes(this.findProduct.toLowerCase()) ||
+       firm?.includes(this.findProduct.toLowerCase())) {
+         return true;
+       } else {
+         return false;
+       }
   }
 
   ngOnDestroy() {

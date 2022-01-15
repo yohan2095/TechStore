@@ -1,5 +1,14 @@
+<!--Search input to find a product that changes the findProduct string with the [(ngmodel)] directive. -->
+<div>
+    Search <input input="text" [(ngModel)]="findProduct" >
+</div>
+
 <!--*ngFor for each product in products, display an <app-product> component with its data.
-    while the variable product get stored in the productData variable which is in the <app-product> component.-->
-<app-product [productData]="product"
-             *ngFor="let product of products"
-></app-product>
+    while the variable product get stored in the productData variable which is in the <app-product> component.
+    *ngIf return a boolean to decide wheter to show the component's product according to if it matches with 
+    the user search input store in the findProduct string.
+    [productId]="product.id!" sends the product with the input method to the <app-product> component.
+    -->
+<div class="product_div" *ngFor="let product of products">
+        <app-product [productId]="product.id!" *ngIf="search(product)"></app-product>
+</div>

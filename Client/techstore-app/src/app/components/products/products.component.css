@@ -1,3 +1,10 @@
 * {
     text-align: center;
 }
+
+.product_div {
+    margin: 1%;
+    padding: 1%;
+    display: inline-block;
+}
+
